@@ -379,7 +379,6 @@ def problem1c(n):
             count = count * (k + 2)
     return sum_of_digits(count)
 
-
 ###############################################################################
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
