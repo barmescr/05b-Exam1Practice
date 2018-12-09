@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Cleo Barmes.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -111,6 +111,29 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
+
+    crl = rg.Circle(circle.center,circle.radius)
+    crl.attach_to(window)
+    crl.fill_color = circle.fill_color
+    rec = rg.Rectangle(rectangle.corner_1,rectangle.corner_2)
+    rec.outline_color = rectangle.outline_color
+    rec.attach_to(window)
+    window.render()
+
+    window.continue_on_mouse_click()
+
+    up = rec.get_upper_right_corner()
+    down = rec.get_lower_left_corner()
+
+    line = rg.Line(up,down)
+    line.arrow = 'last'
+    line.attach_to(window)
+
+    window.render()
+    window.continue_on_mouse_click()
+
+    crl.fill_color = rectangle.outline_color
+    window.render()
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
