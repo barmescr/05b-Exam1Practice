@@ -225,7 +225,7 @@ def problem3b(m, point1):
         :type point1: rg.Point
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -243,12 +243,14 @@ def problem3b(m, point1):
     lines = 3
     x_value = point1.x
     y_value = point1.y
+    answer = 0
 
     for k in range(m):
         point = rg.Point(x_value, y_value)
-        problem3a(window, point, lines)
-        lines = lines + (k * 2)
-        y_value = y_value + (60 * k)
+        answer = answer + problem3a(window, point, lines)
+        lines = lines + 2
+        y_value = y_value + 60
+    return answer
 
 
     window.close_on_mouse_click()
